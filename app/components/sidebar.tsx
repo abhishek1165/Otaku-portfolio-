@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {sidebarStyles as s} from "@/public/dummyStyles"
+import { TypingAnimation } from "@/app/components/ui/typing-animation"
 
 type IconProps=React.SVGProps<SVGSVGElement>&{className?: string};
 
@@ -123,15 +124,78 @@ const Sidebar = ():React.ReactElement => {
   ];
 
   return (
-    <div>
-      <div>
-        <div>
+   <>
+
+    <div className={s.mobileTopNav}>
+      <div className={s.mobileTopNavInner}>
+        <div className={s.mobileAvatarContainer}>
           <div className={s.mobileAvatar}>
-            
+            <Image src="/luffy.png" alt="Abhishek Avatar" width={40} height={40} className={s.mobileAvatarImage} priority/>
           </div>
+
+          <div>
+            <div className={s.mobileName}> Abhishek Kachhap </div>
+            <TypingAnimation className={s.mobileTyping}
+            words={["DevOops Engineer","Full Stack","  Problem Solver","Anime Lover"]} loop />
+          </div>
+
         </div>
       </div>
     </div>
+
+    <div className={s.mobileSpacer}></div>
+
+    <aside>
+         
+         <div className={s.desktopSidebar} aria-labelledby="desktop-sidebar">
+
+         </div>
+
+        <nav 
+            id ="desktop-sidebar" className={s.navContainer}aria-label="Primary">
+              <ul className={s.navList}>
+                {navItems.map(({href,label,Icon})=>(
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`${s.navItem} ${pathname === href ? s.navItemActive : s.navItemInactive}`}
+                      aria-current={pathname === href ? "page" : undefined}
+                    >
+                      <Icon className={s.navIcon} />
+                      <span className={s.navLabel}>{label}</span>
+                    </Link>
+                  </li>
+                ))}
+
+              </ul>
+                   
+                   <div className={s.connectLabel}>Connect</div>
+
+                   <ul className={s.socialList}>
+                    {socials.map((soc)=>
+                    <li key={soc.label}>
+                      <a href={soc.href} className={s.socialItem} title={soc.label}
+                      rel="noopener noreferrer" target="_blank">
+                        <svg className={s.socialIcon} viewBox='0 0 24 24'
+                        fill="currentColor" aria-hidden="true">
+                          <path d={soc.svgPath}/>
+
+                        </svg>
+                        <span className={s.socialLabel}>{soc.label}</span>
+                               
+                      </a>
+                    </li>
+                     
+                    )}
+
+                   </ul>
+            
+        </nav>
+    </aside>
+
+    
+
+  </>
    
   )
 }
