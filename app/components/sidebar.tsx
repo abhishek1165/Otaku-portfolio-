@@ -145,11 +145,28 @@ const Sidebar = ():React.ReactElement => {
 
     <div className={s.mobileSpacer}></div>
 
-    <aside>
+    <aside className={s.desktopSidebar} aria-labelledby="desktop-sidebar">
          
-         <div className={s.desktopSidebar} aria-labelledby="desktop-sidebar">
+        
+           <div className={s.desktopAvatarContainer}>
+            
+            <div className={s.desktopAvatar}>
+              <Image src="/luffy.png" alt="Abhishek Avatar" 
+              width={48} height={48}
+               className={s.desktopAvatarImage} priority/>
+            </div>
+                
+                <div>
+                   <div className={s.desktopName}> Abhishek Kachhap </div>
+                    <TypingAnimation className={s.desktopTyping}
+                     words={["DevOops Engineer",
+                                "Full Stack",
+                                "Problem Solver",
+                                  "Anime Lover"]} 
+                       loop />
+                </div>
 
-         </div>
+           </div>
 
         <nav 
             id ="desktop-sidebar" className={s.navContainer}aria-label="Primary">
@@ -192,7 +209,37 @@ const Sidebar = ():React.ReactElement => {
             
         </nav>
     </aside>
+        
+        <div className={`${s.mobileOverlay}
+         ${isOpen ? s.mobileOverlayVisible 
+         : s.mobileOverlayHidden } `} >
 
+            <div className={`${s.mobileOverlayBg}
+                ${isOpen ? s.mobileOverlayBgVisible 
+                : s.mobileOverlayBgHidden } `} onClick={()=>setIsOpen(false)}/>
+               
+               <div className={`${s.mobileSidebar} ${isOpen ? s.mobileSidebarVisible : 
+                s.mobileSidebarHidden}`}>
+                   
+                    <div className={s.mobileSidebarHeader}>
+                      <div className={s.mobileHeaderInner}>
+                        <div className={s.mobileAvatarContainer}>
+                          <div className={s.mobileAvatar}>
+
+                              <Image src="/luffy.png" 
+                              alt="Abhishek Avatar" 
+                              width={40} height={40} 
+                              className={s.mobileAvatarImage} 
+                              priority/>
+                              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+               </div>
+           
+        </div>
     
 
   </>
