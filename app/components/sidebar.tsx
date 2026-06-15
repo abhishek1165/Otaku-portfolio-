@@ -336,6 +336,8 @@ const Sidebar = (): React.ReactElement => {
             ))}
           </ul>
         </nav>
+
+        {/* <p className={s.footerText}>Made by Abhishek Kachhap | © 2026</p> */}
       </aside>
 
       <div

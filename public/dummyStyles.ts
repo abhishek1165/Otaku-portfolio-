@@ -468,6 +468,8 @@ export const sidebarStyles = {
   mobileSpacer: "md:hidden h-16",
 
   // Desktop sidebar
+  // Original: desktopSidebar: "hidden md:flex flex-col w-[260px] h-screen px-6 py-8 bg-zinc-950 border-r border-zinc-800 fixed left-0 top-0 overflow-y-auto",
+  // Fixed:    desktopSidebar: "hidden md:flex flex-col justify-between w-[260px] h-screen px-6 py-8 bg-zinc-950 border-r border-zinc-800 fixed left-0 top-0 overflow-y-auto",
   desktopSidebar: "hidden md:flex flex-col w-[260px] h-screen px-6 py-8 bg-zinc-950 border-r border-zinc-800 fixed left-0 top-0 overflow-y-auto",
   desktopAvatarContainer: "flex items-center gap-3 mb-6",
   desktopAvatar: "w-12 h-12 rounded-full overflow-hidden ring-1 ring-white/10 shadow-sm",
