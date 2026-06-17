@@ -23,7 +23,7 @@ const Footer = () : React.ReactElement => {
         <div className={"text-lg cursor-pointer"}>
            Reach out →
         </div>
-          <TextHoverEffect text="ABHISHEK" />
+            <TextHoverEffect text="ABHISHEK" />
            <div className='text-lg'>{timeNow}</div>
             
       </div>

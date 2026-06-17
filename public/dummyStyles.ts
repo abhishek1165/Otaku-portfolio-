@@ -65,7 +65,8 @@ export const homePageStyles = {
 };
 
 export const spotlightStyles = {
-  position: "-top-40 -z-20 left-0 md:-top-20 md:left-60"
+  // position: "-top-40 z-0 left-0 md:-top-20 md:left-60"
+   position: "-top-40 -z-20 left-0 md:-top-20 md:left-60"
 };
 
 
