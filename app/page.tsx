@@ -7,7 +7,7 @@ import Link from "next/link";
 import { homePageStyles, spotlightStyles } from "@/public/dummyStyles";
 import { Spotlight } from "../app/components/ui/Spotlight";
 import { Cover } from "./components/ui/cover";
-import{PointerHighlight} from "./components/ui/pointer-highlight"
+import { PointerHighlight } from "./components/ui/pointer-highlight";
 
 const HomePage = (): React.ReactElement => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,109 +32,127 @@ const HomePage = (): React.ReactElement => {
         <div className={homePageStyles.gradientOverlay} />
         <section className={homePageStyles.heroSection}>
           <div className="relative">
-            <h1 className={homePageStyles.h1  }>
+            <h1 className={homePageStyles.h1}>
               Hey, I&apos;m{" "}
-            <span className={homePageStyles.spanWithMargin}>
-              <Cover>Abhishek</Cover>
-            </span>
+              <span className={homePageStyles.spanWithMargin}>
+                <Cover>Abhishek</Cover>
+              </span>
             </h1>
             <h2 className={homePageStyles.h2}>
               Dev OOps {""}
-               <span className={homePageStyles.spanInline}>
-                   <PointerHighlight>
-                            Engineer
-                    </PointerHighlight>
-               </span>
+              <span className={homePageStyles.spanInline}>
+                <PointerHighlight>Engineer</PointerHighlight>
+              </span>
             </h2>
-                 
-                 <div className="mb-6">
-                  <div className={homePageStyles.calloutCard.wrapper}>
-                    <div className={homePageStyles.calloutCard.innerContainer}>
-                      <div className={homePageStyles.calloutCard.textContainer}>
-                        <svg 
-                        className={homePageStyles.calloutCard.icon}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        > 
-                         <path d="M3 12l9-9 9 9" strokeWidth="1.2"/>
 
-                        </svg>
-                            <div className={homePageStyles.calloutCard.text}>
-                              Connect with me on X
-                            </div>
-
-                      </div>
-                         <button 
-                         type="button"
-                         className={homePageStyles.calloutCard.button}
-                         onClick={() => window.open("https://x.com/Abhishek_DevOps", "_blank")} >
-                             Follow
-                         </button>
+            <div className="mb-6">
+              <div className={homePageStyles.calloutCard.wrapper}>
+                <div className={homePageStyles.calloutCard.innerContainer}>
+                  <div className={homePageStyles.calloutCard.textContainer}>
+                    <svg
+                      className={homePageStyles.calloutCard.icon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 12l9-9 9 9" strokeWidth="1.2" />
+                    </svg>
+                    <div className={homePageStyles.calloutCard.text}>
+                      Connect with me on X
                     </div>
-
                   </div>
-
-                 </div> 
-                 <p className={homePageStyles.paragraph}>
-                      I turn fuzzy ideas into live Products (<em>quickly</em>) — full-stack AI Builder. Currently working as a Founding Engineer at{" "}
-              <a className={homePageStyles.link} href="https://invoicegenerator-frontend-tdng.onrender.com/">
+                  <button
+                    type="button"
+                    className={homePageStyles.calloutCard.button}
+                    onClick={() =>
+                      window.open("https://x.com/Kachhap3079", "_blank")
+                    }
+                  >
+                    Follow
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p className={homePageStyles.paragraph}>
+              I turn fuzzy ideas into live Products (<em>quickly</em>) —
+              full-stack AI Builder. Currently working as a Founding Engineer at{" "}
+              <a
+                className={homePageStyles.link}
+                href="https://invoicegenerator-frontend-tdng.onrender.com/"
+              >
                 Invoice-AI
               </a>
-              . I have built multiple products in past 5 years; raised $100K funding for my startup{" "}
+              . I have built multiple products in past 5 years; raised $100K
+              funding for my startup{" "}
               <a className={homePageStyles.link} href="#">
                 hexagondigitalservices.com
               </a>
-                 </p>
-                 <article className={homePageStyles.article.wrapper}>
-                   <div className={homePageStyles.article.videoContainer}>
-                      <video
-                       ref={videoRef}
-                       className={homePageStyles.article.video}
-                       autoPlay
-                       muted
-                       loop
-                       playsInline
-                       preload="auto"
-                       disablePictureInPicture
-                       disableRemotePlayback
-                       style={homePageStyles.article.videoStyles}>
-                        <source src="/homevideo.webm" type="video/webm" />
-                        Your browser does not support the video tag.
-                      </video>
+            </p>
+            <article className={homePageStyles.article.wrapper}>
+              <div className={homePageStyles.article.videoContainer}>
+                <video
+                  ref={videoRef}
+                  className={homePageStyles.article.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  style={homePageStyles.article.videoStyles}
+                >
+                  <source src="/homevideo.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
 
-                   </div>
-                        
-                        <div className={homePageStyles.article.content}>
-                          <div className={homePageStyles.article.header}>
-                             <svg className={homePageStyles.article.headerIcon} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                              </svg>
+              <div className={homePageStyles.article.content}>
+                <div className={homePageStyles.article.header}>
+                  <svg
+                    className={homePageStyles.article.headerIcon}
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
 
-                              <span>Featured Work</span>
-
-                          </div>
-                            <h3 className={homePageStyles.article.title}>
-                              My AI Journey: From Idea to Product in 30 Days
-                            </h3>
-                            <p className={homePageStyles.article.description}>
-                              A 30-day journey of building an AI-powered product, sharing insights, challenges, and triumphs along the way. From concept to launch, discover the highs and lows of creating with AI.
-                            </p>
-                              <div className={homePageStyles.article.linkContainer}>
-                                  <Link 
-                                  href="/projects"
-                                  className={homePageStyles.article.link}>
-                                    <span>View My Projects</span>
-                                    <svg className={homePageStyles.article.linkIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-    </svg>
-                                  </Link>
-                              </div>
-
-                        </div>
-                 </article>
-
+                  <span>Featured Work</span>
+                </div>
+                <h3 className={homePageStyles.article.title}>
+                  My AI Journey: From Idea to Product in 30 Days
+                </h3>
+                <p className={homePageStyles.article.description}>
+                  A 30-day journey of building an AI-powered product, sharing
+                  insights, challenges, and triumphs along the way. From concept
+                  to launch, discover the highs and lows of creating with AI.
+                </p>
+                <div className={homePageStyles.article.linkContainer}>
+                  <Link
+                    href="/projects"
+                    className={homePageStyles.article.link}
+                  >
+                    <span>View My Projects</span>
+                    <svg
+                      className={homePageStyles.article.linkIcon}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </div>

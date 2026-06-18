@@ -18,14 +18,15 @@ const Footer = () : React.ReactElement => {
 
    },[])
   return (
-    <footer className={"relative mx-auto pb-12 mb:pb-0 lg:pb-0 xl:pb-0 max-w-303 bg-zinc-950 border-t border-zinc-800 text-zinc-300 overflow-hidden"}>
-      <div  className={"flex flex-col sm:flex-row items-center justify-between gap-4 px-20 py-5"}>
-        <div className={"text-lg cursor-pointer"}>
-           Reach out →
+    <footer className={"relative mx-auto pb-12 md:pb-0 lg:pb-0 xl:pb-0 max-w-[1320px] bg-zinc-950 border-t border-zinc-800 text-zinc-300 overflow-hidden"}>
+      <div className={"flex flex-col sm:flex-row items-center justify-between gap-4 px-20 py-5"}>
+        <div className="w-[60%] h-28 flex-shrink-0">
+          <TextHoverEffect text="ABHISHEK" />
         </div>
-            <TextHoverEffect text="ABHISHEK" />
-           <div className='text-lg'>{timeNow}</div>
-            
+        <div className={"text-lg cursor-pointer"}>
+          Reach out →
+        </div>
+        <div className='text-lg'>{timeNow}</div>
       </div>
     </footer>
   )
