@@ -64,7 +64,9 @@ const HomePage = (): React.ReactElement => {
                   </div>
                   <button
                     type="button"
+                    
                     className={homePageStyles.calloutCard.button}
+                    style={{cursor :"pointer"}}
                     onClick={() =>
                       window.open("https://x.com/Kachhap3079", "_blank")
                     }
