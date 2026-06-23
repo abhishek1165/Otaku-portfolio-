@@ -1,0 +1,108 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { projectDetailStyles as s } from "@/public/dummyStyles";
+import { getProjectBySlug, getAllProjectSlugs } from "@/app/lib/projects-data";
+import {
+  ArrowLeft,
+  ExternalLink,
+  GitHub,
+  Youtube,
+  Package,
+} from "lucide-react";
+
+interface ProjectPageProps {
+  params: Promise<{ slug: string }>;
+}
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+  if (!project) notFound();
+  return (
+    <div className={s.pageContainer}>
+      <div className={s.innerContainer}>
+        <Link href="/projects" className={s.backButton}>
+          <ArrowLeft className={s.backIcon} />
+          Back
+        </Link>
+
+        <div className={s.projectHeader}>
+          <div className={s.headerFlex}>
+            <div className={s.headerLeft}>
+              <div className={s.titleContainer}>
+                <h1 className={s.projectTitle}>{project.title}</h1>
+
+                <span
+                  className={`${s.statusBadge} ${
+                    project.status === "active"
+                      ? s.statusActive
+                      : s.statusInactive
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+              <p className={s.projectDescription}>
+                {project.description}
+              </p>
+                 <div className={s.tagsContainer}>
+                    {project.tags.map((tag) => (
+                      <span key={tag} className={s.tag}>
+                        {tag}
+                      </span>
+                    ))}
+                 </div>
+            </div>
+               
+               <div className = { s.actionButtonsContainer}>
+                {project.links.visit &&(
+                    <Link
+                     href={project.links.visit}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className={s.visitButton}>
+                        <ExternalLink className={s.backButton}/>
+                        Visit Live
+                    </Link>
+                )} 
+                  
+                  {project.links.howIBuilt&&(
+                    <Link
+                     href={project.links.howIBuilt}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className={s.visitButton}>
+                        <Youtube className={s.backButton}/>
+                        Visit Live
+                        </Link>
+                  )}
+               </div>
+              
+          </div>
+        </div>
+             <div className={s.imageContainer}>
+                <img
+                src={project.image}
+                alt={project.title}
+                className={s.projectImage}>
+                    
+                </img>
+
+             </div>
+
+              <div className={s.gridContainer}>
+                <div className={s.mainContent}>
+                    <section>
+                        <h2 className={s.sectionTitle}>
+                            Project Details
+
+                        </h2>
+                    </section>
+
+                </div>
+
+              </div>
+
+      </div>
+    </div>
+  );
+}
