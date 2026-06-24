@@ -72,7 +72,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                      rel="noopener noreferrer"
                      className={s.visitButton}>
                         <Youtube className={s.backButton}/>
-                        Visit Live
+                        How I Built It
                         </Link>
                   )}
                </div>
@@ -95,7 +95,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         <h2 className={s.sectionTitle}>
                             Project Details
 
-                        </h2>
+                        </h2 >
+                        <div className={s.prose}>
+                          <p className={s.proseText}>
+                            {project.detailedDescription}
+                          </p>
+
+                        </div>
+                    </section>
+
+                    <section>
+                      <h2 className={s.sectionTitle}>
+                            Learing Outcomes
+
+                        </h2 >
+                        <div className={s.learningOutcomesGrid }>
+                          {project.learningOutcomes.map((outcome,index)=>(
+                            <div key={index} className={s.learningOutcomeCard}>
+                              <div className={s.learningOutcomeNumber}>
+                                  <span className={s.learningOutcomeNumberText}>
+                                     {index+1}
+                                  </span>
+                                 </div>
+
+                            </div>
+
+                          ))}
+
+                        </div>
                     </section>
 
                 </div>
