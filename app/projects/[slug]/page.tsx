@@ -117,6 +117,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                      {index+1}
                                   </span>
                                  </div>
+                                  
+                                  <span className={s.learningOutcomeText}>
+                                    {outcome}
+
+                                  </span>
 
                             </div>
 
@@ -126,6 +131,49 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </section>
 
                 </div>
+                 
+                  <div className={s.sidebar} >
+                    <section>
+                      <h3 className={s.sidebarSectionTitle}>
+                        Tech Stack
+
+                      </h3>
+                      <div className ={s.techStackContainer}>
+                        {project.techStack.map((tech) => (
+                          <span key={tech} className={s.techStackItem}>
+                            {tech}
+
+                          </span>
+                        ))}
+
+                      </div>
+
+                    </section>
+                    <section>
+                       < h3  className={s.sidebarSectionTitle}>
+                       Project Link
+
+                       </h3>
+                       <div className={s.linksContainer}>
+                        {
+                          project.links.github &&(
+                            <a 
+                            href={project.links.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={s.linkCard}
+                            >
+                              <GitHub className={s.linkIcon}/>
+                              <span className={s.linkText}>View Source</span>
+
+                            </a>
+                          )
+                        }
+
+                       </div>
+                    </section>
+                    
+                  </div>
 
               </div>
 
