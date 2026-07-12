@@ -9,6 +9,7 @@ import {
   // Youtube,
   Package,
 } from "lucide-react";
+import { BackgroundBeams } from "@/app/components/ui/background-beams";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -41,9 +42,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {project.status}
                 </span>
               </div>
-              <p className={s.projectDescription}>
-                {project.description}
-              </p>
+              <p className={s.projectDescription}>{project.description}</p>
               <div className={s.tagsContainer}>
                 {project.tags.map((tag) => (
                   <span key={tag} className={s.tag}>
@@ -171,53 +170,60 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </section>
 
             <section className={s.sidebarSection}>
-              <h3 className={s.sidebarSectionTitle}>
-                Project Info
-                </h3>
-              <div className={s.projectInfoContainer}> 
+              <h3 className={s.sidebarSectionTitle}>Project Info</h3>
+              <div className={s.projectInfoContainer}>
                 <div>
-                   <p className={s.projectInfoLabel}>
-                     Author
-                   </p>
-                   <div className={s.authorContainer}>
+                  <p className={s.projectInfoLabel}>Author</p>
+                  <div className={s.authorContainer}>
                     <img
-                     src={project.authorAvatar}
-                     alt={project.author}
-                     className={s.authorAvatar }>
-                    </img>
+                      src={project.authorAvatar}
+                      alt={project.author}
+                      className={s.authorAvatar}
+                    ></img>
 
-                     <p  className={s.authorName}>
-                         {project.author}
-                     </p>
-
-                   </div>
+                    <p className={s.authorName}>{project.author}</p>
+                  </div>
                 </div>
 
                 <div>
-                   <p className={s.projectInfoLabel}>
-                     Status
-                   </p>
+                  <p className={s.projectInfoLabel}>Status</p>
 
-                   <p className={s.projectInfoLabel}>
-                     {project.status}
-                   </p>
+                  <p className={s.projectInfoText}>{project.status}</p>
                 </div>
                 <div>
-                   <p className={s.projectInfoText }>
-                   Category
-                   </p>
+                  <p className={s.projectInfoLabel}>Category</p>
 
-                   <p className={s.projectInfoText}>
-                     {project.tags[0]}
-                   </p>
+                  <p className={s.projectInfoText}>{project.tags[0]}</p>
                 </div>
-
-                
               </div>
             </section>
           </div>
         </div>
       </div>
+      <BackgroundBeams />
     </div>
   );
+}
+export async function generateStaticParams() {
+  return getAllProjectSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+  if (!project) return { title: "Project Not Found" };
+  return {
+    title: `${project.title} | My Projects`,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: [
+        {
+          url: project.image,
+          alt: project.title,
+        },
+      ],
+    },
+  };
 }

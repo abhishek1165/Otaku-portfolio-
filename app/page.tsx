@@ -68,7 +68,7 @@ const HomePage = (): React.ReactElement => {
                     className={homePageStyles.calloutCard.button}
                     style={{cursor :"pointer"}}
                     onClick={() =>
-                      window.open("https://x.com/Kachhap3079", "_blank")
+                      window.open("https://x.com/Kachhap307", "_blank")
                     }
                   >
                     Follow
