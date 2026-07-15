@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   Visit Live
                 </Link>
               )}
-
+{/* 
               {project.links.howIBuilt && (
                 <Link
                   href={project.links.howIBuilt}
@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <ExternalLink className={s.backButton} />
                   How I Built It
                 </Link>
-              )}
+              )} */}
             </div>
           </div>
         </div>

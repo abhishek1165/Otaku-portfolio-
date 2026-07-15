@@ -481,7 +481,7 @@ export const sidebarStyles = {
   // Navigation
   navContainer: "flex-1",
   navList: "space-y-2",
-  navItem: "flex items-center gap-3 px-3 py-3 rounded-lg transition-colors duration-150",
+  navItem: "flex items-center gap-3 px-3 py-3 rounded-lg transition-colors duration-150 cursor-pointer",
   navItemActive: "bg-zinc-800 text-zinc-50",
   navItemInactive: "text-zinc-200 hover:bg-zinc-800 hover:text-zinc-50",
   navIcon: "w-4 h-4 text-zinc-300",
@@ -519,7 +519,7 @@ export const sidebarStyles = {
   mobileContent: "p-6 overflow-y-auto h-[calc(100vh-240px)]",
   mobileSectionLabel: "text-xs text-zinc-500 mb-3",
   mobileNavList: "space-y-1",
-  mobileNavItem: "flex items-center gap-3 px-3 py-3 rounded-lg transition-colors duration-150",
+  mobileNavItem: "flex items-center gap-3 px-3 py-3 rounded-lg transition-colors duration-150 cursor-pointer",
   mobileNavIcon: "w-5 h-5 text-zinc-300",
   mobileNavLabel: "text-sm font-medium",
 

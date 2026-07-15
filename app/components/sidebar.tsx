@@ -408,10 +408,11 @@ const Sidebar = (): React.ReactElement => {
                       className={`${s.mobileNavItem} ${
                         pathname === href ? s.navItemActive : s.navItemInactive
                       }`}
-                      aria-label={pathname === href ? "page" : undefined}
-                    ></Link>
-                    <Icon className={s.mobileNavIcon} />
-                    <span className={s.mobileNavLabel}>{label}</span>
+                      aria-current={pathname === href ? "page" : undefined}
+                    >
+                      <Icon className={s.mobileNavIcon} />
+                      <span className={s.mobileNavLabel}>{label}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>
