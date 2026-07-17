@@ -39,9 +39,9 @@ const HomePage = (): React.ReactElement => {
               </span>
             </h1>
             <h2 className={homePageStyles.h2}>
-              Dev OOps {""}
+              Full-Stack Developer{" "}
               <span className={homePageStyles.spanInline}>
-                <PointerHighlight>Engineer</PointerHighlight>
+                <PointerHighlight>| DevOps Enthusiast</PointerHighlight>
               </span>
             </h2>
 
@@ -59,16 +59,15 @@ const HomePage = (): React.ReactElement => {
                       <path d="M3 12l9-9 9 9" strokeWidth="1.2" />
                     </svg>
                     <div className={homePageStyles.calloutCard.text}>
-                      Connect with me on X
+                      Connect with me on LinkedIn
                     </div>
                   </div>
                   <button
                     type="button"
-                    
                     className={homePageStyles.calloutCard.button}
-                    style={{cursor :"pointer"}}
+                    style={{cursor: "pointer"}}
                     onClick={() =>
-                      window.open("https://x.com/Kachhap307", "_blank")
+                      window.open("https://www.linkedin.com/in/abhishek-kachhap", "_blank")
                     }
                   >
                     Follow
@@ -77,19 +76,14 @@ const HomePage = (): React.ReactElement => {
               </div>
             </div>
             <p className={homePageStyles.paragraph}>
-              I turn fuzzy ideas into live Products (<em>quickly</em>) —
-              full-stack AI Builder. Currently working as a Founding Engineer at{" "}
-              <a
-                className={homePageStyles.link}
-                href="https://invoicegenerator-frontend-tdng.onrender.com/"
-              >
-                Invoice-AI
-              </a>
-              . I have built multiple products in past 5 years; raised $100K
-              funding for my startup{" "}
-              <a className={homePageStyles.link} href="#">
-                hexagondigitalservices.com
-              </a>
+              I&apos;m a final-year Computer Science student who builds
+              full-stack products with the MERN stack, and lately I&apos;ve
+              been going deep on DevOps — containers, CI/CD pipelines, and
+              cloud fundamentals. I&apos;m IBM-certified in Applied DevOps
+              Engineering (Docker, Kubernetes, Jenkins, CI/CD), and I care more
+              about shipping something that works end-to-end than polishing a
+              demo. Currently looking for SDE-1 and DevOps internship roles,
+              open to relocating to Bangalore.
             </p>
             <article className={homePageStyles.article.wrapper}>
               <div className={homePageStyles.article.videoContainer}>

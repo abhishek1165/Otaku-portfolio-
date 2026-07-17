@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
+import { LoadingProvider } from "./context/LoadingProvider";
+import LoadingWrapper from "./components/LoadingWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,16 +29,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.className} ${geistMono.className} bg-zinc-950 text-zinc-100 antialiased`}>
-        <div className="min-h-screen flex">
-          <Sidebar />
-          {/* Original: <div className=" flex-1 md:ml-65 ml-10px"> */}
-          {/* Fixed:    <div className="flex-1 md:ml-[260px]"> */}
-          <div className=" flex-1 md:ml-65 ml-10px">
-            <main className="min-h-screen">{children}</main>
-             <Footer/>
-          </div>
-        </div>
+        <LoadingProvider>
+          <LoadingWrapper>
+            <div className="min-h-screen flex">
+              <Sidebar />
+              {/* Original: <div className=" flex-1 md:ml-65 ml-10px"> */}
+              {/* Fixed:    <div className="flex-1 md:ml-[260px]"> */}
+              <div className=" flex-1 md:ml-65 ml-10px">
+                <main className="min-h-screen">{children}</main>
+                <Footer />
+              </div>
+            </div>
+          </LoadingWrapper>
+        </LoadingProvider>
       </body>
     </html>
   );
 }
+
