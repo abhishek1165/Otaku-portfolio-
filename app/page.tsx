@@ -49,29 +49,33 @@ const HomePage = (): React.ReactElement => {
               <div className={homePageStyles.calloutCard.wrapper}>
                 <div className={homePageStyles.calloutCard.innerContainer}>
                   <div className={homePageStyles.calloutCard.textContainer}>
+                    {/* Document / download icon */}
                     <svg
                       className={homePageStyles.calloutCard.icon}
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
+                      strokeWidth="1.5"
                       aria-hidden="true"
                     >
-                      <path d="M3 12l9-9 9 9" strokeWidth="1.2" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"
+                      />
                     </svg>
                     <div className={homePageStyles.calloutCard.text}>
-                      Connect with me on LinkedIn
+                      Get my resume
                     </div>
                   </div>
-                  <button
-                    type="button"
+                  <a
+                    href="/Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={homePageStyles.calloutCard.button}
-                    style={{cursor: "pointer"}}
-                    onClick={() =>
-                      window.open("https://www.linkedin.com/in/abhishek-kachhap", "_blank")
-                    }
                   >
-                    Follow
-                  </button>
+                    View Resume
+                  </a>
                 </div>
               </div>
             </div>
