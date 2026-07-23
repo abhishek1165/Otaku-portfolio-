@@ -248,7 +248,7 @@ export const contactPageStyles = {
   contactMethodsGrid: "mb-12 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 z-10",
 
   // Contact method card
-  contactCard: "group flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/30 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/50",
+  contactCard: "group flex items-center gap-4 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/50",
   contactIconContainer: "flex h-12 w-12 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors group-hover:bg-zinc-700 group-hover:text-zinc-100",
   contactIcon: "h-5 w-5",
   contactLabel: "text-sm font-medium text-zinc-500",

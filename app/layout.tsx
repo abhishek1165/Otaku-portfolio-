@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import { LoadingProvider } from "./context/LoadingProvider";
 import LoadingWrapper from "./components/LoadingWrapper";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +34,6 @@ export default function RootLayout({
           <LoadingWrapper>
             <div className="min-h-screen flex">
               <Sidebar />
-              {/* Original: <div className=" flex-1 md:ml-65 ml-10px"> */}
-              {/* Fixed:    <div className="flex-1 md:ml-[260px]"> */}
               <div className=" flex-1 md:ml-65 ml-10px">
                 <main className="min-h-screen">{children}</main>
                 <Footer />
@@ -42,6 +41,18 @@ export default function RootLayout({
             </div>
           </LoadingWrapper>
         </LoadingProvider>
+        <Toaster
+          theme="dark"
+          richColors
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: "#18181b",
+              border: "1px solid #3f3f46",
+              color: "#f4f4f5",
+            },
+          }}
+        />
       </body>
     </html>
   );
