@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abhishekkachhap.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Abhishek Kachhap - Portfolio",
   description: "Designed and Developed by Abhishek Kachhap - A passionate software developer and designer.",
 };
