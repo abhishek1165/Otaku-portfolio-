@@ -85,7 +85,7 @@ const ContactPage = () => {
     return `${baseClass} ${focusedClass}`;
   } 
   return (
-    <div className={contactPageStyles.pageContainer}>
+    <div className={`${contactPageStyles.pageContainer} pb-24 md:pb-12`}>
       <div className={contactPageStyles.contentContainer}>
         <div className={contactPageStyles.formOuterContainer}>
           {/* Subtle radial mask overlay — sits on top of wavy bg */}
@@ -96,7 +96,7 @@ const ContactPage = () => {
             colors={["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"]}
             waveWidth={50}
             backgroundFill="black"
-            blur={10}
+            blur={20}
             speed="fast"
             waveOpacity={0.5}
             className="w-full"

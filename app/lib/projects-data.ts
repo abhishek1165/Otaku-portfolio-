@@ -63,7 +63,7 @@ export const projects: Project[] = [
   {
   id: "2",
   title: "Connect IT",
-  slug: "connect -it",
+  slug: "connect-it",
   description: "A modern Next.js web application featuring video capabilities, real-time updates, and secure authentication.",
   detailedDescription: "Connect is a comprehensive web application built with Next.js 14 and React 18. It integrates powerful features like real-time video streaming using the Stream Video React SDK and a robust backend with Convex. The app also provides secure user authentication via Clerk and a modern, accessible UI crafted with Tailwind CSS and Radix UI.",
   image: "/ConnectIt.png",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   ],
   links: {
     visit: "https://connect-it-lyart.vercel.app/",
-    github: "https://github.com/YourUsername/Connect"
+    github: "https://github.com/abhishek1165/connect-it"
   },
   author: "Abhishek Kachhap",
   authorAvatar: "/luffy.png"
@@ -145,7 +145,6 @@ export const projects: Project[] = [
     "Leveraging Google Generative AI for intelligent photo organization and advanced LLM capabilities"
   ],
   links: {
-    visit:"",
     github: "https://github.com/abhishek1165/Event_Snap"
   },
   author: "Abhishek Kachhap",
@@ -179,11 +178,7 @@ export const projects: Project[] = [
       "Geolocation and mapping services",
       "Multi-vendor platform architecture",
     ],
-    links: {
-      visit: "",
-      github: "",
-     
-    },
+    links: {},
     author: "Abhishek Kachhap",
     authorAvatar: "/luffy.png",
   },
@@ -214,11 +209,7 @@ export const projects: Project[] = [
       "Database design for booking systems",
       "Frontend animations and UX design",
     ],
-    links: {
-      visit: "",
-      github: "",
-     
-    },
+    links: {},
     author: "Abhishek Kachhap",
     authorAvatar: "/luffy.png",
   },
